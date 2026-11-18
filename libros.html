@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Libros - Snoopy's Library</title>
+
+    <link rel="stylesheet" href="css/libros.css">
+
+</head>
+
+<body>
+
+    <div class="browser-frame">
+
+        <!-- ENCABEZADO -->
+        <header class="site-header">
+
+            <div class="logo-container">
+
+                <img src="img/snoopy.jpg"
+                     alt="Snoopy leyendo"
+                     class="logo">
+
+                <h1 class="site-title">Snoopy's Library</h1>
+
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Ej4.html">Inicio</a></li>
+                    <li><a href="libros.html" class="active">Libros</a></li>
+                    <li><a href="#" id="cerrarSesion">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contenido">
+
+            <h2 class="titulo">Nuestra colección de libros</h2>
+
+            <p class="descripcion">
+                ¡Bienvenido/a a nuestra biblioteca!
+                Explora nuestra colección y descarga tus libros favoritos.
+            </p>
+
+            <div class="galeria">
+
+                <!-- LIBRO 1 -->
+                <article class="libro">
+
+                    <img src="portadas/el_principito.jpg"
+                         alt="Portada de El Principito">
+
+                    <h3>
+                        <a href="libros/el_principito.pdf" download>
+                            El Principito
+                        </a>
+                    </h3>
+
+                    <p>Antoine de Saint-Exupéry</p>
+
+                    <span>Fantasía y aventura</span>
+
+                </article>
+
+
+                <!-- LIBRO 2 -->
+                <article class="libro">
+
+                    <img src="img/portadas/alicia.jpg"
+                         alt="Portada de Alicia en el País de las Maravillas">
+
+                    <h3>
+                        <a href="libros/alicia.pdf" download>
+                            Alicia en el País de las Maravillas
+                        </a>
+                    </h3>
+
+                    <p>Lewis Carroll</p>
+
+                    <span>Fantasía</span>
+
+                </article>
+
+
+                <!-- LIBRO 3 -->
+                <article class="libro">
+
+                    <img src="img/portadas/dorian.jpg"
+                         alt="Portada de El retrato de Dorian Gray">
+
+                    <h3>
+                        <a href="libros/dorian_gray.pdf" download>
+                            El retrato de Dorian Gray
+                        </a>
+                    </h3>
+
+                    <p>Oscar Wilde</p>
+
+                    <span>Novela clásica</span>
+
+                </article>
+
+
+                <!-- LIBRO 4 -->
+                <article class="libro">
+
+                    <img src="img/portadas/frankenstein.jpg"
+                         alt="Portada de Frankenstein">
+
+                    <h3>
+                        <a href="libros/frankenstein.pdf" download>
+                            Frankenstein
+                        </a>
+                    </h3>
+
+                    <p>Mary Shelley</p>
+
+                    <span>Terror y ciencia ficción</span>
+
+                </article>
+
+
+                <!-- LIBRO 5 -->
+                <article class="libro">
+
+                    <img src="img/portadas/romeo.jpg"
+                         alt="Portada de Romeo y Julieta">
+
+                    <h3>
+                        <a href="libros/romeo_julieta.pdf" download>
+                            Romeo y Julieta
+                        </a>
+                    </h3>
+
+                    <p>William Shakespeare</p>
+
+                    <span>Drama y romance</span>
+
+                </article>
+
+
+                <!-- LIBRO 6 -->
+                <article class="libro">
+
+                    <img src="img/portadas/aventuras.jpg"
+                         alt="Portada de Las aventuras de Sherlock Holmes">
+
+                    <h3>
+                        <a href="libros/sherlock_holmes.pdf" download>
+                            Las aventuras de Sherlock Holmes
+                        </a>
+                    </h3>
+
+                    <p>Arthur Conan Doyle</p>
+
+                    <span>Misterio</span>
+
+                </article>
+
+            </div>
+
+            <div class="volver">
+                <a href="Ej4.html">Volver a la biblioteca principal</a>
+            </div>
+
+        </main>
+
+
+        <!-- PIE DE PÁGINA -->
+        <footer class="site-footer">
+            <p>
+                &copy; 2026 Snoopy's Library.
+                Todos los derechos reservados.
+            </p>
+        </footer>
+
+    </div>
+
+
+    <!-- PROTECCIÓN DE ACCESO -->
+    <script>
+
+        const usuario = sessionStorage.getItem("usuarioBiblioteca");
+
+        if (!usuario) {
+            alert("Debes iniciar sesión para acceder a los libros.");
+            window.location.replace("Sesion.php");
+        }
+
+        document.getElementById("cerrarSesion").addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            sessionStorage.removeItem("usuarioBiblioteca");
+
+            window.location.href = "Ej4.html";
+
+        });
+
+    </script>
+
+</body>
+</html>
